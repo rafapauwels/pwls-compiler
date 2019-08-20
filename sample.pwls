@@ -1,0 +1,1 @@
+(se (> 0 2) (escreve "teste"))

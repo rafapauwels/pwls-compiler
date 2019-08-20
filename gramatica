@@ -1,0 +1,31 @@
+Prog -> Funcao*
+Funcao -> "(" FuncaoD ")"
+FuncaoD -> If | Comparacao | IO | Declara | Operacao
+If -> "se" Funcao Funcao (Funcao)?
+Comparacao -> ("<" | ">" | "==" | ">=" | "<=" | "!=") Argumento Argumento
+IO -> "ler" | Escrever
+Declara -> "definir" Id Argumento
+Operacao -> ("+" | "-" | "*" | "/") Argumento+
+Texto -> '"' (0..9 | a..z | A..Z | " ")* '"'
+Numero -> (0..9)+ ("." (0..9)+)?
+Argumento -> Id | Numero | Texto | Funcao
+Id -> (a..z | A..z)+
+
+Melhorar tokenizador, deve perceber eof como fim de uma palavra
+
+Prog -> Funcao*
+Funcao -> "(" FuncaoD ")"
+FuncaoD -> Se | Declara
+Declara -> Id FuncaoD
+Se -> 
+
+
+;; 0 -> Inicio da função
+;; 1 -> Funcao
+;; 2 -> Identificador
+;; 3 -> Texto
+;; 4 -> Número
+;; 9 -> Fim da função
+
+0 1 2
+0 1 2 9
